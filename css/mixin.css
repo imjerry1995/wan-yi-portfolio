@@ -1,0 +1,16 @@
+* {
+  position: relative;
+  -webkit-box-sizing: border-box;
+    -webkit-box-sizing--moz-box-sizing: border-box;
+    -webkit-box-sizing-box-sizing: border-box; }
+
+a {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer; }
+
+body {
+  color: #4A4B4C;
+  background: #F8F9F9; }
