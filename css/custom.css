@@ -17,13 +17,20 @@ body {
   background: #F8F9F9; }
 
 section {
-  padding: 20px; }
+  padding: 20px;
+  position: relative; }
   section h2 {
-    font-size: 1.6em;
-    padding: 10px 20px 20px 20px;
-    color: #2F3E46;
-    font-weight: 500;
-    z-index: -10; }
+    font-size: 1.2em;
+    padding: 8px 12px;
+    background-color: #437280;
+    color: #fff;
+    display: inline-block;
+    border-radius: 100px;
+    font-weight: 400;
+    margin: 20px;
+    min-width: 133px;
+    text-align: center;
+    letter-spacing: 1px; }
   section .row {
     margin: 0; }
 
@@ -59,27 +66,19 @@ hr {
   .sidebar p {
     font-size: 1em;
     padding: 10px; }
-  .sidebar .menu {
-    margin-top: 20px;
+  .sidebar .contact {
     min-width: 200px; }
-    .sidebar .menu a {
+    .sidebar .contact h3 {
+      padding: 20px;
+      font-weight: 100; }
+    .sidebar .contact a {
       display: inline-block;
-      padding: 5px;
-      -webkit-transition: .2s;
-      -o-transition: .2s;
-      transition: .2s;
-      font-weight: 200; }
-      .sidebar .menu a:before, .sidebar .menu a:after {
-        content: "/";
-        display: inline-block;
-        padding: 0 20px;
-        -webkit-transition: .2s;
-        -o-transition: .2s;
-        transition: .2s; }
-      .sidebar .menu a:hover {
-        color: #437280; }
-        .sidebar .menu a:hover:before, .sidebar .menu a:hover:after {
-          padding: 0 10px; }
+      font-weight: 400;
+      color: #437280;
+      padding: 10px; }
+      .sidebar .contact a i {
+        display: block;
+        margin-bottom: 10px; }
 
 .main {
   height: 100vh;
@@ -92,30 +91,13 @@ hr {
 #portfolio .port {
   padding: 20px;
   font-weight: 200; }
-  #portfolio .port .text {
-    margin-left: 5px; }
-    #portfolio .port .text p {
-      padding: 10px 0px; }
 
 #portfolio .photo {
-  border-radius: 100%;
-  overflow: hidden;
-  width: 150px; }
+  overflow: hidden; }
   #portfolio .photo img {
-    width: 100%;
+    border-radius: 99em;
+    width: 250px;
     z-index: -100; }
-
-#portfolio .skill {
-  padding: 20px;
-  height: 197px; }
-  #portfolio .skill h3 {
-    font-size: 1.2em;
-    padding: 10px 0px;
-    letter-spacing: 2px;
-    color: #437280; }
-  #portfolio .skill p {
-    padding: 10px;
-    font-weight: 200; }
 
 #web .box {
   padding: 0;

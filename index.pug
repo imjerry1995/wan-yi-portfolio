@@ -27,33 +27,33 @@ body
                         img(src="images/wan-yi-logo.svg", alt="")
                     h1 翁婉頤
                     p Jerry Weng
-                    ul.menu
-                        li
-                            a(href="#portfolio") 個人簡介
-                        li
-                            a(href="#web") 網頁作品
-                        li
-                            a(href="#flat") 平面作品
+                    .contact
+                        h3 —— Contact ——
+                        a(href='tel:0909967260')
+                            i.fa.fa-phone-square 
+                            | 0909-967-260
+                        a(href='mailto:dragonryu09@gmail.com')
+                            i.fa.fa-envelope-square
+                            | dragonryu09@gmail.com
             .main.col-md-9
                 section#portfolio
-                    h2 個人簡介
-                    .row
-                        .port.col-md-6
-                            .photo
-                                img(src="images/jerry.png", alt="")
-                            .text
-                                p 
-                                    strike 具現化系念能力者(最好是)
-                                p 喜歡網頁前端/喜歡簡約設計/喜歡玩電腦
-                                p 即將前往台科大就讀資訊管理研究所
-                        .skill.col-md-6
-                            h3 網站開發
-                            p 可以活用 HTML/CSS/JS/PHP ，會一點vus.js
-                            h3 UI設計
-                            p illustrator上手，最近剛開始學sketch
+                    h2 About Me
+                    .port
+                        .photo.col-md-4
+                            img(src="images/jerry.png", alt="")
+                        .text.col-md-8
+                            p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita aut commodi ullam corrupti aliquid, quibusdam doloremque dolore magnam harum vero laboriosam sunt consectetur possimus, facilis incidunt accusamus culpa atque cupiditate.
+                        
+                            
+                hr
+                section#experience
+                    h2 Experience
+                hr
+                section#skills
+                    h2 Skills
                 hr
                 section#web
-                    h2 網頁作品
+                    h2 My Works
                     .row
                         .box.col-md-6.col-xs-12
                             .box_left
@@ -125,58 +125,64 @@ body
                                         a(href="http://web.ncue.edu.tw/~ccource/105BigData&History/index.html" target="_blank") 作品連結
                                     p 依提供的主題設計主視覺
                                     p 一頁式介面設計
-                                    p.closed x close   
-                hr           
-                section#flat
-                    h2 平面作品
-                    h3 彰師大通識中心講座海報
-                    div.row
-                        a.col-md-3.flat(href="images/flat/ncue0.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                            img(src="images/flat/ncue0.png" alt="")
-                        a.col-md-3.flat(href="images/flat/ncue1.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                            img(src="images/flat/ncue1.png" alt="")
-                        a.col-md-3.flat(href="images/flat/ncue2.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                            img(src="images/flat/ncue2.png" alt="")
-                        a.col-md-3.flat(href="images/flat/ncue3.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                            img(src="images/flat/ncue3.png" alt="")
-                    .row
-                        a.col-md-3.flat(href="images/flat/ncue4.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                            img(src="images/flat/ncue4.png" alt="")
-                        a.col-md-3.flat(href="images/flat/ncue5.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                            img(src="images/flat/ncue5.png" alt="")
-                        a.col-md-3.flat(href="images/flat/ncue6.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                            img(src="images/flat/ncue6.png" alt="")
-                        a.col-md-3.flat(href="images/flat/ncue7.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                            img(src="images/flat/ncue7.png" alt="")
-                    h3 彰師大通識中心歷史科研討會 視覺設計
-                    .row
-                        a.col-md-3.flat(href="images/flat/990.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                            img(src="images/flat/990.png" alt="")
-                        a.col-md-6.flat(href="images/flat/992.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                            img(src="images/flat/992.png" alt="")
+                                    p.closed x close 
+                hr
+                section#eduacation
+                    h2 Eduacation  
+                //- hr           
+                //- section#flat
+                //-     h2 平面作品
+                //-     h3 彰師大通識中心講座海報
+                //-     div.row
+                //-         a.col-md-3.flat(href="images/flat/ncue0.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
+                //-             img(src="images/flat/ncue0.png" alt="")
+                //-         a.col-md-3.flat(href="images/flat/ncue1.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
+                //-             img(src="images/flat/ncue1.png" alt="")
+                //-         a.col-md-3.flat(href="images/flat/ncue2.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
+                //-             img(src="images/flat/ncue2.png" alt="")
+                //-         a.col-md-3.flat(href="images/flat/ncue3.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
+                //-             img(src="images/flat/ncue3.png" alt="")
+                //-     .row
+                //-         a.col-md-3.flat(href="images/flat/ncue4.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
+                //-             img(src="images/flat/ncue4.png" alt="")
+                //-         a.col-md-3.flat(href="images/flat/ncue5.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
+                //-             img(src="images/flat/ncue5.png" alt="")
+                //-         a.col-md-3.flat(href="images/flat/ncue6.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
+                //-             img(src="images/flat/ncue6.png" alt="")
+                //-         a.col-md-3.flat(href="images/flat/ncue7.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
+                //-             img(src="images/flat/ncue7.png" alt="")
+                //-     h3 彰師大通識中心歷史科研討會 視覺設計
+                //-     .row
+                //-         a.col-md-3.flat(href="images/flat/990.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
+                //-             img(src="images/flat/990.png" alt="")
+                //-         a.col-md-6.flat(href="images/flat/992.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
+                //-             img(src="images/flat/992.png" alt="")
                         
-                    h3 彰師大通識中心工作坊手冊封面
-                    .row
-                        a.col-md-6.flat(href="images/flat/993.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                            img(src="images/flat/993.png" alt="")
+                //-     h3 彰師大通識中心工作坊手冊封面
+                //-     .row
+                //-         a.col-md-6.flat(href="images/flat/993.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
+                //-             img(src="images/flat/993.png" alt="")
                         
+                hr
+                section#activities
+                    h2 Activities
 
-    script(type="text/javascript").
-      (function () {
-      var options = {
-      line: "//line.me/ti/p/VOOh6lHPBR", // Line QR code URL
-      company_logo_url: "//scontent.ftpe3-1.fna.fbcdn.net/v/t1.0-9/22554987_10208655844828081_5435680817703353611_n.jpg?oh=043398429ff2a8a1385a137aaba1bdbb&oe=5B4590D3", // URL of company logo (png, jpg, gif)
-      greeting_message: "有網頁設計/平面設計的需求都可以找我聊聊！", // Text of greeting message
-      call_to_action: "聯絡我", // Call to action
-      button_color: "#437280", // Color of button
-      position: "left", // Position may be 'right' or 'left'
-      order: "facebook,line" // Order of buttons
-      };
-      var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
-      var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-      s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-      var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-      })();                           
+    //- script(type="text/javascript").
+    //-   (function () {
+    //-   var options = {
+    //-   line: "//line.me/ti/p/VOOh6lHPBR", // Line QR code URL
+    //-   company_logo_url: "//scontent.ftpe3-1.fna.fbcdn.net/v/t1.0-9/22554987_10208655844828081_5435680817703353611_n.jpg?oh=043398429ff2a8a1385a137aaba1bdbb&oe=5B4590D3", // URL of company logo (png, jpg, gif)
+    //-   greeting_message: "有網頁設計/平面設計的需求都可以找我聊聊！", // Text of greeting message
+    //-   call_to_action: "聯絡我", // Call to action
+    //-   button_color: "#437280", // Color of button
+    //-   position: "left", // Position may be 'right' or 'left'
+    //-   order: "facebook,line" // Order of buttons
+    //-   };
+    //-   var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+    //-   var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+    //-   s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+    //-   var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    //-   })();                           
 
 
 

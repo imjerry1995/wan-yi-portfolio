@@ -54,6 +54,11 @@ body
 	left: 50%
 	transform: translateX(-50%) translateY(-50%)
 
+@mixin center-notop
+	position: absolute
+	left: 50%
+	transform: translateY(-50%)
+
 //左右置中
 @mixin margin-center
 	margin: 0 auto
@@ -80,12 +85,20 @@ body
 
 section
     padding: 20px
+    position: relative
     h2
-        font-size: 1.6em
-        padding: 10px 20px 20px 20px
-        color: $font-title
-        font-weight: 500
-        z-index: -10
+        font-size: 1.2em
+        padding: 8px 12px
+        background-color: $color-main
+        color: #fff
+        display: inline-block
+        border-radius: 100px
+        font-weight: 400
+        margin: 20px
+        min-width: 133px
+        text-align: center
+        letter-spacing: 1px
+
     .row
         margin: 0
 
@@ -117,24 +130,20 @@ hr
     p
         font-size: 1em 
         padding: 10px
-    .menu
-        margin-top: 20px
+    .contact
         min-width: 200px
+        h3
+            padding: 20px
+            font-weight: 100
         a
             display: inline-block
-            padding: 5px
-            transition: .2s
-            font-weight: 200
-            &:before,&:after
-                content: "/"
-                display: inline-block
-                padding: 0 20px
-                transition: .2s
+            font-weight: 400
+            color: $color-main
+            padding: 10px
+            i
+                display: block
+                margin-bottom: 10px
 
-            &:hover
-                color: $color-main
-                &:before,&:after
-                    padding: 0 10px
 
 .main
     height: 100vh
@@ -142,6 +151,7 @@ hr
 
 
 #portfolio
+
     .port,.skill,.photo,.text
         display: inline-block
         vertical-align: middle
@@ -151,28 +161,15 @@ hr
         font-weight: 200
 
         .text
-            margin-left: 5px
-            p
-                padding: 10px 0px
+            
 
     .photo
-        border-radius: 100%
         overflow: hidden
-        width: 150px
         img
-            width: 100%
+            border-radius: 99em
+            width: 250px
             z-index: -100
-    .skill
-        padding: 20px
-        height: 197px
-        h3
-            font-size: 1.2em
-            padding: 10px 0px
-            letter-spacing: 2px
-            color: $color-main
-        p
-            padding: 10px
-            font-weight: 200
+    
 
 #web
     .box
