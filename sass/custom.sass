@@ -1,6 +1,7 @@
 //主視覺色調
 $background: #F8F9F9
-$color-main: #437280
+$color-main: #1E3F64
+$color-sec: #E84d3c
 
 //文字顏色
 $font-color: #4A4B4C
@@ -102,6 +103,12 @@ section
     .row
         margin: 0
 
+    .part_wrapper
+        background-color: rgba(255,255,255,.4)
+        border: 1px solid rgba(0,0,0,.12)
+        border-radius: 5px
+        overflow: hidden
+
 hr
     width: 85%
 
@@ -152,15 +159,26 @@ hr
 
 #portfolio
 
-    .port,.skill,.photo,.text
+    .port,.photo,.text
         display: inline-block
         vertical-align: middle
+        letter-spacing: 1px
 
     .port
         padding: 20px
-        font-weight: 200
+        font-weight: normal
 
         .text
+            h3
+                font-size: 1.5em
+                color: $color-main
+                font-weight: 700
+                padding: 10px 5px
+
+            p
+                line-height: 20px
+                padding: 5px 5px
+                letter-spacing: 2px
             
 
     .photo
@@ -168,119 +186,262 @@ hr
         img
             border-radius: 99em
             width: 250px
-            z-index: -100
+            // z-index: -100
+
+#skills
+    .skill
+        padding: 20px 50px 50px 50px
+        h3
+            font-weight: bold
+            font-size: 1.2em
+            padding: 10px
+            margin-top: 10px
+            color: $color-main
+            letter-spacing: 1px
+        p
+            padding: 10px
+        a
+            padding: 0px 0px 0px 20px
+            color: lighten($color-main,20)
+            em
+                text-decoration: underline
+    .process_bar
+        width: 80%
+        height: 20px
+        border-radius: 50px
+        background-color: rgba($color-main,.1)
+        position: relative
+
+        .bar
+            content: ""
+            display: block
+            width: 90%
+            height: 20px
+            border-radius: 50px
+            background-color: $color-sec
+            animation: gogo 2.5s
+
+    @keyframes gogo
+        0% 
+            width: 0%
+        
     
+#experience
+    .part_wrapper,.ul_wrapper
+        display: flex
+        justify-content: center
+        align-items: center
+    .ul_wrapper
+        width: 100%
+    .timeline
+        width: 2px
+        background-color: rgba($color-main,.5)
+        padding-top: 50px
+    .list_wrapper
+        min-height: 200px
+        position: relative
+
+        &:before
+            content: ""
+            display: block
+            width: 10px
+            height: 10px
+            border-radius: 99em
+            background-color: $color-main
+            transform: translateX(-40%)
+            position: absolute
+            top: 9px
+            box-shadow: 0px 0px 12px rgba($color-main,.9)
+            
+
+        &:nth-child(2n+1)
+            .dialog
+                left: 40px
+                &:before
+                    left: -4px
+
+        &:nth-child(2n)
+            .dialog
+                right: 40px
+                left: initial
+            .list_content
+                right: 50px
+                left: initial
+
+    .dialog
+        position: absolute
+        background-color: $color-main
+        padding: 8px 12px
+        min-width: 300px
+        border-radius: 5px
+        background-color: $color-sec
+        display: inline-block
+        transition: .5s
+        cursor: pointer
+
+        &:hover
+            transform: translate(-10px,-10px)
+
+        h3,.title
+            display: inline-block
+            color: #fff
+            letter-spacing: 1px
+            padding: 5px
+        
+        h3
+            font-weight: bold
+            font-size: 1.2em
+    
+            
+
+        &:before
+            content: ""
+            display: block
+            width: 10px
+            height: 10px
+            position: absolute
+            right: -4px
+            background-color: $color-sec
+            transform: rotate(45deg)
+            border-radius: 2px
+    .list_content
+        position: absolute
+        top: 90px
+        left: 50px
+        
+        li
+            min-width: 300px
+            padding: 5px 0px
+
+                    
+//vue 過場動畫
+.fade-enter-active, .fade-leave-active 
+    transition: .5s
+    transform: translateY(0px)
+//原始的狀態
+.fade-enter, .fade-leave-to 
+    opacity: 0
+    transform: translateY(50px) 
 
 #web
+    .part_wrapper
+        margin-top: 10px
     .box
         padding: 0
         height: 300px
         overflow: hidden
         transition: all .2s
         
-        &:hover
-            cursor: pointer
-            .box_photo
-                img
-                    transform: scale(1.1)
-
+        
     .box_left
         height: 100%
         display: inline-block
-    .box_photo
-        position: relative
-        height: 100%
         img
             transition: .2s
             width: 100%
             height: 100%
-    .box_title
-        position: absolute
-        bottom: 0%
-        color: #ffffff
-        width: 100%
-        padding: 20px
-        font-size: 1.3em
-        background-color: rgba($font-title,.5)
+        &:hover
+            cursor: pointer
+            img
+                transform: scale(1.1)
+
 
     .box_info
         display: inline-block
         vertical-align: top
-        position: relative
+        padding: 20px
 
-        .info
-            position: absolute
-            right: 20px
-            top: 50px
-
+        .title
+            padding: 5px 20px
+            font-size: 1.2em
+            color: $color-main
+            letter-spacing: 1px
 
         .tags
-            padding: 20px
+            padding: 10px
 
         .tag
             display: inline-block
             padding: 10px
+            margin-left: 5px
             border-radius: 20px
             background-color: $background
-        p
-            font-weight: 200
-            padding: 10px
-            a
-                font-weight: normal
-                color: $color-main
-                font-size: 1.2em
+            border: 1px solid rgba(0,0,0,.12)
 
-        .closed
-            display: inline-block
-            color: #222
-            font-weight: 200
-            font-size: 1em
-            &:hover
-                text-decoration: underline
+        ul
+            li
+                padding: 5px 20px
 
 
-    .box.active
-        overflow: visible
-        position: relative
-        .box_left
-            z-index: 100
-        .box_photo
-            overflow: hidden
-        .box_info
-            background-color: #ffffff
-            height: 120%
-            width: 200%
-            position: absolute
-            top: 0
-            left: 0
-            margin: -30px
-        .closed,.works
-            z-index: 10000
-            
 
-    .box.right.active
-        .box_info
-            left: -90%
-            .info
-                left: 50px
-
-        .closed,.works
-            z-index: 10000
-
-#flat
-    h3
+#eduacation
+    .edu
         padding: 20px
-        font-weight: 200
-    .flat
-        float: left
-        padding: 10px
-        img
-            width: 100%
+    .ncue,.ntust
+
+        text-align: center
+        vertical-align: top
+        .logo
+            img
+                width: 80%
+        .year
+            color: $color-main
+        .year,.name
+            padding: 5px
+        .name
+            letter-spacing: 1px
+    .base_line
+        margin: 20px 0px 50px 0px
+        width: 100%
+        height: 2px
+        background-color: rgba($color-main,.1)
+        position: relative
+        .go
+            position: absolute
+            left: 20%
+            top: -10px
+            padding: 8px 12px
+            background-color: $color-sec
+            color: #fff
+            border-radius: 50px
+
+
+        .ani
+            animation: go_ntust 2s
+            position: absolute
+            left: 68%
+            top: -10px
+            padding: 8px 12px
+            background-color: $color-sec
+            color: #fff
+            border-radius: 50px
+
+@keyframes go_ntust
+    0%
+        left: 20%
+
+
+#others
+    .part_wrapper
+        margin-bottom: 50px
+    .act
+        padding: 20px
+        li
+            padding: 20px
+            .year
+                color: $color-sec
+                padding: 5px
+            .title
+                color: $color-main
+                padding: 5px
+                letter-spacing: 1px
+
+
 
 
 @media screen and (max-width: 768px)
     .sidebar
-        height: 200px
+        height: 300px
     .all
         
         top: 50%
@@ -306,4 +467,15 @@ hr
     .sidebar .logo
         width: 100px
         min-width: 50px
+
+
+@media screen and (min-width: 320px) and (max-width: 425px)
+
+    .sidebar .contact h3
+        display: none
+    #experience .dialog
+        min-width: 0px  
+    #experience .list_content
+        position: static
+        display: none
     

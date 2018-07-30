@@ -15,8 +15,7 @@ head(lang='en')
     script(src="js/jquery.min.js" type='text/javascript')
     script(src="js/bootstrap.min.js",type='text/javascript')
     script(src="js/lightbox.min.js" type='text/javascript')
-    script(src="js/all.js" type='text/javascript')
-
+    script(src="js/vue.js" type='text/javascript')
 
 body
     #app
@@ -38,135 +37,119 @@ body
             .main.col-md-9
                 section#portfolio
                     h2 About Me
-                    .port
-                        .photo.col-md-4
-                            img(src="images/jerry.png", alt="")
-                        .text.col-md-8
-                            p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita aut commodi ullam corrupti aliquid, quibusdam doloremque dolore magnam harum vero laboriosam sunt consectetur possimus, facilis incidunt accusamus culpa atque cupiditate.
-                        
+                    .part_wrapper
+                        .port
+                            .photo.col-md-4
+                                img(src="images/jerry.png", alt="")
+                            .text.col-md-8
+                                h3 翁婉頤 (Jerry Weng)
+                                p 大家好，我是翁婉頤。今年九月要到臺灣科技大學 資訊管理所就讀碩一。在大學求學期間，被學校工讀處室的職員質疑一句：
+                                    em 「你是資管系的不會寫網頁，讀什麼資管系！」
+                                    |給激到，從此跳入網頁前端的坑ＸＤ
+
+                                p 接處網頁大概一年半左右，從學校網站頁面小小修改，到可以替學校寫畢業典禮網站。
+                                    |大三也到企業實習，主要利用HTML,CSS,jQuery,RWD，替公司的案子切版、製作。
+                                    |也接觸過大型專案，如：玉山國家公園網站、台灣電力公司內部網頁切版等。
+                                
+                                p 大四的畢業專題擔任組長，透過前端與後端(php)建構了一套旅遊攻略規劃的平台。
+                                    | 接下來將會增進原生JavaScript、ES6及Vue.js等框架的能力。
                             
-                hr
-                section#experience
-                    h2 Experience
                 hr
                 section#skills
                     h2 Skills
+                    .part_wrapper.col-md-12
+                        ul.skill
+                            li(v-for="s in skills")
+                                h3 {{s.name}}
+                                p {{s.discription}}
+                                    a(:href='s.works.whref' target="_blank") 
+                                        em {{s.works.wname}}
+                                .process_bar
+                                    .bar(:style="{'width':s.processes+'%'}")
+                                    
+
+                        
+    
+                hr
+                section#experience
+                    h2 Experience
+                    
+                    #app2.part_wrapper.col-xs-12
+                        .ul_wrapper
+                            transition-group.timeline(tag='ul',name='fade')
+                                li.list_wrapper(v-for="(l,id) in lists" :key="id",:style="{'transition-delay':id/2+'s'}")
+                                    .dialog
+                                        h3 {{l.years}}
+                                        .title {{l.title}}
+                                    ul.list_content
+                                        li(v-for="c in l.content") {{c.tags}}
+                                    
+                                    
                 hr
                 section#web
                     h2 My Works
+                    span 點擊圖片到作品網站
                     .row
-                        .box.col-md-6.col-xs-12
-                            .box_left
-                                .box_photo
-                                    img(src="images/works/pintour.png", alt="")
-                                .box_title
-                                    p Pintour - 拼出你的旅遊地圖
-                            .box_info
+                        .part_wrapper.col-xs-12.col-sm-6.col-md-12(v-for='w in works')
+                            .box_left.col-md-6
+                                a(:href='w.href' target='_blank')
+                                    img(:src='w.img', alt="")
+                            .box_info.col-md-6
                                 .info
+                                    .title {{w.title}}
                                     .tags
-                                        .tag #畢業專題
-                                        .tag #前端
-                                        .tag #後端協作
-                                        .tag #專案管理
-                                    p.works 
-                                        a(href="http://examplez8x.byethost7.com/Pintour/index.php" target="_blank") 作品連結
-                                    p 現正進行中。
-                                    p 一款以拼圖為意象的旅遊攻略規劃平台。
-                                    p 製作前端、及後端協助，整體平台規劃
-                                    p.closed x close
-                        .box.col-md-6.right.col-xs-12
-                            .box_left
-                                .box_photo
-                                    img(src="images/works/yushan.png", alt="")
-                                .box_title
-                                    p 玉山國家公園
-                            .box_info
-                                .info
-                                    .tags
-                                        .tag #實習作品
-                                        .tag #前端協作
-                                        .tag #多語系配色
-                                    p.works 
-                                        a(href="https://www.ysnp.gov.tw/default.aspx" target="_blank") 作品連結
-                                    p 實習的第一個作品。
-                                    p 協助前端切版、調整
-                                    p 設定多語系配色
-                                    p.closed x close
-                        .box.col-md-6.col-xs-12
-                            .box_left
-                                .box_photo
-                                    img(src="images/works/nchu.png", alt="")
-                                .box_title
-                                    p 中興大學國務所網站
-                            .box_info
-                                .info(style="right: 200px")
-                                    .tags
-                                        .tag #實習作品
-                                        .tag #前端
-                                    p.works 
-                                        a(href="http://www.ginppa.nchu.edu.tw/" target="_blank") 作品連結
-                                    p 依照UI切版
-                                    p 協助資料彙整
-                                    p.closed x close
-                        .box.col-md-6.right.col-xs-12
-                            .box_left
-                                .box_photo
-                                    img(src="images/works/ncue.png", alt="")
-                                .box_title
-                                    p 彰化師大歷史科研討會-大數據與歷史教學
-                            .box_info
-                                .info
-                                    .tags
-                                        .tag #一頁式網站
-                                        .tag #前端
-                                        .tag #主視覺設計
-                                        .tag #UI設計
-                                    p.works 
-                                        a(href="http://web.ncue.edu.tw/~ccource/105BigData&History/index.html" target="_blank") 作品連結
-                                    p 依提供的主題設計主視覺
-                                    p 一頁式介面設計
-                                    p.closed x close 
+                                        .tag(v-for='t in w.tags')  # {{t}}
+                                    ul
+                                        li(v-for='d in w.discription') - {{d}}
+
                 hr
                 section#eduacation
-                    h2 Eduacation  
-                //- hr           
-                //- section#flat
-                //-     h2 平面作品
-                //-     h3 彰師大通識中心講座海報
-                //-     div.row
-                //-         a.col-md-3.flat(href="images/flat/ncue0.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                //-             img(src="images/flat/ncue0.png" alt="")
-                //-         a.col-md-3.flat(href="images/flat/ncue1.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                //-             img(src="images/flat/ncue1.png" alt="")
-                //-         a.col-md-3.flat(href="images/flat/ncue2.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                //-             img(src="images/flat/ncue2.png" alt="")
-                //-         a.col-md-3.flat(href="images/flat/ncue3.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                //-             img(src="images/flat/ncue3.png" alt="")
-                //-     .row
-                //-         a.col-md-3.flat(href="images/flat/ncue4.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                //-             img(src="images/flat/ncue4.png" alt="")
-                //-         a.col-md-3.flat(href="images/flat/ncue5.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                //-             img(src="images/flat/ncue5.png" alt="")
-                //-         a.col-md-3.flat(href="images/flat/ncue6.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                //-             img(src="images/flat/ncue6.png" alt="")
-                //-         a.col-md-3.flat(href="images/flat/ncue7.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                //-             img(src="images/flat/ncue7.png" alt="")
-                //-     h3 彰師大通識中心歷史科研討會 視覺設計
-                //-     .row
-                //-         a.col-md-3.flat(href="images/flat/990.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                //-             img(src="images/flat/990.png" alt="")
-                //-         a.col-md-6.flat(href="images/flat/992.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                //-             img(src="images/flat/992.png" alt="")
-                        
-                //-     h3 彰師大通識中心工作坊手冊封面
-                //-     .row
-                //-         a.col-md-6.flat(href="images/flat/993.png" data-lightbox="example-set" data-title="點擊圖片兩側切換")
-                //-             img(src="images/flat/993.png" alt="")
-                        
-                hr
-                section#activities
-                    h2 Activities
+                    h2 Eduacation
+                    .part_wrapper.col-xs-12
+                        .edu
+                            .ncue.col-xs-6
+                                .logo
+                                    img(src="images/ncue.png", alt="")
+                                .year 2014.09 - 2018.06
+                                .name 國立彰化師範大學 
+                                | 資訊管理學系
+                            .ntust.col-xs-6
+                                .logo
+                                    img(src="images/ntust.png", alt="")
+                                .year 2018.09 - 2020.06
+                                .name 國立臺灣科技大學 
+                                | 資訊管理學所
+                            .base_line.col-xs-12
+                                .go
+                                    i.fa.fa-graduation-cap
+                                    | NOW HERE
 
+                        
+                
+                hr
+                section#others
+                    h2 Others
+                    .part_wrapper.col-xs-12
+                        ul.act.col-md-6
+                            li
+                                .year 2018.03 - 2018.04 
+                                .title 參加第16屆ATCC 晉級初賽第一輪
+                            li
+                                .year 2017.09 - 2018.06 
+                                .title 彰師大資管系畢業成果展總召
+                        ul.act.col-md-6
+                            li
+                                .year 2016.09 - 2017.06 
+                                .title 彰師大資管系系女籃副隊長
+                            li
+                                .year 2015.11
+                                .title 彰師大四系聯合商管歌唱比賽主持人
+
+
+
+
+
+        script(src="js/all.js" type='text/javascript')
     //- script(type="text/javascript").
     //-   (function () {
     //-   var options = {
